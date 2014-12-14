@@ -53,7 +53,7 @@ In a nut shell, you want to use this if you need to
 - have a truly general purpose IndexedSeq
 
 The last point is bit subjective. Where standard Vector performs in
-O(log_32 n) this has O(log_2 n). One way to illustrate this:
+O(log_32 n) rbvector has O(log_2 n). One way to illustrate this:
 - log_2 (2^31 - 1) ~= 31.0
 - log_32 (2^31 - 1) ~= 6.2
 
@@ -67,9 +67,9 @@ Some examples assuming one million element Vector(s):
 - rbvector ++ is 25000 times faster than standard Vector
 - standard Vector head() is 6.6 times faster and take() is 7.7 times faster
 
-See the benchmark [results](benchmark/2014-12-12.results.txt) for details.
+See the benchmark [results](benchmark/results-2014-12-12.txt) for details.
 
-Notice that Scala 2.11 Vector ++ has been 
+[1] Scala 2.11 Vector ++ has been 
 [optimized](https://github.com/scala/scala/commit/4234b34dd4e6563ba8a9b5080cc6a0da021848d3) 
 to perform slightly better, especially when one of the collections is small.
 
@@ -90,5 +90,6 @@ License
 -------
 
 Apache License, Version 2.0
+
 https://www.apache.org/licenses/LICENSE-2.0
 
